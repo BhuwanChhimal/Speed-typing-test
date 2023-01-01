@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highscore</title>
+    <style>
+        * {
+            margin: 0;
+            font-family: cursive;
+        }
+        
+        body {
+            background-color: rgb(171, 171, 171);
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        ul>li {
+            padding: 0.4rem;
+        }
+        
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        h1 {
+            margin: 1rem;
+        }
+        
+        button {
+            background-color: blueviolet;
+            color: white;
+            outline: none;
+            font-size: large;
+            padding: 0.2rem 0.5rem;
+            margin-top: 1rem;
+            border: 3px solid rgb(78, 65, 121);
+            border-radius: 15px;
+            box-shadow: 3px 3px 20px grey;
+        }
+        
+        button:hover {
+            cursor: pointer;
+        }
+        
+        button:active {
+            box-shadow: 1px 1px 0px grey;
+        }
+        
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .hero>h1 {
+            width: 25vw;
+            background-color: aqua;
+            border-radius: 25px;
+            padding: 0.7rem;
+            margin: 1rem 0;
+        }
+        
+        section>ul {
+            border: 2px solid blueviolet;
+            background-color: rgb(255, 255, 120);
+            box-shadow: 3px 3px 30px grey;
+            border-radius: 10px;
+            width: 5.5rem;
+        }
+        
+        .main-content {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main-content">
+        <article class="hero center">
+            <h1 class="center">Highscores:</h1>
+        </article>
+        <section class="center">
+            <ul>
+
+            </ul>
+            <button><a href="./index.html">Back To Home</a></button>
+        </section>
+    </main>
+    <script>
+        const highscore = document.querySelector('ul'); //-->storing the ul element on var 'highscore'
+
+        let scores = JSON.parse(localStorage.getItem('highscore')) || []; //-->creating a array 
+
+        scores = scores.sort().reverse(); //-->sorting array in descending order
+
+        function createListItem(content) {
+            const li = document.createElement('li');
+            li.textContent = content;
+            return li;
+        }
+
+        for (let index = 0; index < scores.length; index++) {
+            const score = scores[index];
+
+            const li = createListItem(String(index + 1) + ') ' + score);
+
+            highscore.appendChild(li); //--> adding the li we created to ul that is holded by highscore var
+
+        }
+    </script>
+</body>
+
+</html>

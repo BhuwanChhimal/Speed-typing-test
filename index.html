@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <article class="hero center column">
+        <h1 id="main-heading">Test your typing speed</h1>
+        <h2 id="sub-heading">How fast can you type?? :)</h2>
+    </article>
+
+    <section id="main-content" class="center column">
+        <section id="stats" class="stats hide">
+            <p class="stat">WPM: <span id="wpm-display"></span></p>
+            <p class="stat">Score: <span id="score-display"></span></p>
+            <p class="stat">Time: <span id="time-display"></span></p>
+        </section>
+        <section class="btn">
+            <button id="start-button">Start Game</button>
+            <!-- <div class="clickHover"></div> -->
+            <button id="highscore-button" class=""><a href="./highscore.html">High Score Button</a></button>
+        </section>
+        <div id="click" class="click">
+            <div class="arrow"></div>
+            <div class="clickhover">Click to start :)</div>
+        </div>
+
+        <section id="user-text"></section>
+        <section id="txt-display"></section>
+        <form action="submit" id="form" class="hide">
+            <input type="input">
+        </form>
+    </section>
+
+    <script src="./words.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
