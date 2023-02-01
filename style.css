@@ -148,4 +148,9 @@ body {
     background-image: url(./bgimg.png);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
+}
+
+#user-text>span {
+    padding: 0.3rem 0.7rem;
 }
